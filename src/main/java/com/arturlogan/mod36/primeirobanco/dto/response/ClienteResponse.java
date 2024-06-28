@@ -1,15 +1,12 @@
-package com.arturlogan.mod36.primeirobanco.entities;
+package com.arturlogan.mod36.primeirobanco.dto.response;
 
-import jakarta.persistence.*;
+import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.Data;
 
-@Entity
 @Data
-@Table(name = "cliente")
-public class Cliente {
+@JsonInclude(JsonInclude.Include.NON_NULL)
+public class ClienteResponse {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private String nome;

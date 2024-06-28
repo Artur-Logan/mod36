@@ -1,13 +1,10 @@
 package com.arturlogan.mod36;
 
-import com.arturlogan.mod36.entities.Cliente;
-import com.arturlogan.mod36.entities.Produto;
-import com.arturlogan.mod36.services.ClienteService;
+import com.arturlogan.mod36.primeirobanco.dto.request.ClienteRequest;
+import com.arturlogan.mod36.primeirobanco.services.ClienteService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-
-import java.math.BigDecimal;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
@@ -20,14 +17,16 @@ public class ClienteTest {
 
     @Test
     void cadastrar(){
-        Cliente cliente = new Cliente();
+        ClienteRequest cliente = new ClienteRequest();
 
         cliente.setEmail("teste@teste.com");
         cliente.setNome("LOL");
+        cliente.setIdade(19);
+        cliente.setSobrenome("Teste");
 
-        clienteService.salvarProduto(cliente);
+        clienteService.salvar(cliente);
 
         assertNotNull(cliente);
-        assertEquals("teste", cliente.getNome());
+        assertEquals("LOL", cliente.getNome());
     }
 }
