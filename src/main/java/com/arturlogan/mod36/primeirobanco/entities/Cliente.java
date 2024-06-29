@@ -1,10 +1,8 @@
 package com.arturlogan.mod36.primeirobanco.entities;
 
 import jakarta.persistence.*;
-import lombok.Data;
 
 @Entity
-@Data
 @Table(name = "cliente")
 public class Cliente {
 

@@ -2,7 +2,7 @@ package com.arturlogan.mod36.primeirobanco.controllers;
 
 import com.arturlogan.mod36.primeirobanco.dto.request.ClienteRequest;
 import com.arturlogan.mod36.primeirobanco.dto.response.ClienteResponse;
-import com.arturlogan.mod36.primeirobanco.services.ClienteService;
+import com.arturlogan.mod36.services.ClienteService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;

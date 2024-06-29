@@ -1,32 +1,17 @@
-package com.arturlogan.mod36.segundobanco.entities;
+package com.arturlogan.mod36.segundobanco.dto.request;
 
-
-import jakarta.persistence.*;
-import lombok.Data;
+import com.fasterxml.jackson.annotation.JsonInclude;
 
 import java.math.BigDecimal;
 
-@Entity
-@Table(name = "produto")
-public class Produto {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+@JsonInclude(JsonInclude.Include.NON_NULL)
+public class ProdutoRequest {
 
     private String nome;
 
-    private Integer preco;
+    private Integer  preco;
 
     private String marca;
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
 
     public String getNome() {
         return nome;

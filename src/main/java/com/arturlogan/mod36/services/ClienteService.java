@@ -1,11 +1,10 @@
-package com.arturlogan.mod36.primeirobanco.services;
+package com.arturlogan.mod36.services;
 
 import com.arturlogan.mod36.primeirobanco.dto.request.ClienteRequest;
 import com.arturlogan.mod36.primeirobanco.dto.response.ClienteResponse;
 import com.arturlogan.mod36.primeirobanco.entities.Cliente;
 import com.arturlogan.mod36.primeirobanco.mapper.MapperCliente;
 import com.arturlogan.mod36.primeirobanco.repositories.ClienteRepository;
-import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
