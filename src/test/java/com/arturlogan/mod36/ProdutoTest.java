@@ -66,37 +66,37 @@ public class ProdutoTest {
         when(produtoRepository.save(any()))
                 .thenReturn(produto);
 
-        ProdutoResponse clienteResponse = produtoService.atualizar(produto.getId(), produtoRequest);
+        ProdutoResponse produtoResponse = produtoService.atualizar(produto.getId(), produtoRequest);
 
-        assertEquals(produtoRequest.getNome(), clienteResponse.getNome());
-        assertEquals(produtoRequest.getMarca(), clienteResponse.getMarca());
-        assertEquals(produtoRequest.getPreco(), clienteResponse.getPreco());
+        assertEquals(produtoRequest.getNome(), produtoResponse.getNome());
+        assertEquals(produtoRequest.getMarca(), produtoResponse.getMarca());
+        assertEquals(produtoRequest.getPreco(), produtoResponse.getPreco());
 
-        assertNotNull(clienteResponse.getId());
+        assertNotNull(produtoResponse.getId());
     }
 
     @Test
     void listarTodosSucesso() {
         //cenario
         Produto produto = getCliente(19L);
-        Produto cliente2 = getCliente(2L);
-        Produto cliente3 = getCliente(3L);
-        Produto cliente4 = getCliente(4L);
-        Produto cliente5 = getCliente(5L);
-        Produto cliente6 = getCliente(6L);
+        Produto produto2 = getCliente(2L);
+        Produto produto3 = getCliente(3L);
+        Produto produto4 = getCliente(4L);
+        Produto produto5 = getCliente(5L);
+        Produto produto6 = getCliente(6L);
 
-        List<Produto> clienteList = List.of(
-                produto, cliente2, cliente3, cliente4, cliente5, cliente6
+        List<Produto> produtoList = List.of(
+                produto, produto2, produto3, produto4, produto5, produto6
         );
 
         when(produtoRepository.findAll())
-                .thenReturn(clienteList);
+                .thenReturn(produtoList);
         //execução
         List<ProdutoResponse> ClienteResponses = produtoService.listarTodos();
 
         //verificação
-        assertTrue(clienteList.size() > 0);
-        assertEquals(6, clienteList.size());
+        assertTrue(produtoList.size() > 0);
+        assertEquals(6, produtoList.size());
     }
 
     @Test
@@ -108,9 +108,9 @@ public class ProdutoTest {
         when(produtoRepository.findById(any()))
                 .thenReturn(Optional.of(produto));
 
-        ProdutoResponse clienteResponse = produtoService.buscar(id);
+        ProdutoResponse produtoResponse = produtoService.buscar(id);
 
-        assertEquals(id, clienteResponse.getId());
+        assertEquals(id, produtoResponse.getId());
     }
 
     public Produto getCliente(Long id){
